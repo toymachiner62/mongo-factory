@@ -1,6 +1,6 @@
 var chai = require('chai');
 var expect = chai.expect;
-var spies = require('chai-spies');
+//var spies = require('chai-spies');
 
 describe('mongoFactory', function() {
 	
@@ -42,17 +42,13 @@ describe('mongoFactory', function() {
 			});
 		});
 		
-		// describe('with an invalid mongo string parameter', function() {
-// 			it('should return a rejected promise', function(done) {
-// 				//var mongoFactory = require('../');
-// 				var spy = chai.spy(mongoFactory);
-// 				ee.on('getConnection("mongodb://localhost:27017")', spy);
-// 				//var con = mongoFactory.getConnection('mongodb://localhost:27017');
-// 				expect(spy).to.be.spy;
-// 				expect(spy).to.have.been.called();
-// 				//expect(con).to.be.rejected;
-// 				done();
-// 			});
-// 		});
+		describe('with a valid mongo string parameter', function() {
+			it('should return a fulfilled promise', function(done) {
+				var con = mongoFactory.getConnection('mongodb://localhost:27017');
+				expect(con).to.be.fulfilled;
+				expect(con).to.not.be.rejected;
+				done();
+			});
+		});
 	});
 });
