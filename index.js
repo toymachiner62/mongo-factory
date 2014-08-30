@@ -55,5 +55,5 @@ module.exports = function() {
 
       return dbPromise = def.promise;
     }
-  }
+  };
 }();
