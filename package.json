@@ -1,5 +1,5 @@
 {
-  "name": "mongoFactory",
+  "name": "mongo-factory",
   "version": "0.0.0",
   "description": "A very simple mongo connection pool manager",
   "main": "mongoFactory.js",
