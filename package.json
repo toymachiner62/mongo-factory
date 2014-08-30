@@ -1,0 +1,33 @@
+{
+  "name": "mongoFactory",
+  "version": "0.0.0",
+  "description": "A very simple mongo connection pool manager",
+  "main": "mongoFactory.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/toymachiner62/mongoFactory.git"
+  },
+  "keywords": [
+    "mongo",
+    "node",
+    "connection",
+    "pool"
+  ],
+  "author": "Tom Caflisch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toymachiner62/mongoFactory/issues"
+  },
+  "homepage": "https://github.com/toymachiner62/mongoFactory",
+  "dependencies": {
+    "q": "^1.0.1",
+    "mongodb": "^1.4.9",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4"
+  }
+}
