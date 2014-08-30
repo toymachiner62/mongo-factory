@@ -39,7 +39,6 @@ module.exports = function() {
         // Initialize connection once
         MongoClient.connect(connectionString, function(err, database) {
           if (err) {
-						console.log(err);
             def.reject(err);
           }
 
