@@ -23,7 +23,8 @@ mongoFactory.getConnection('mongodb://localhost:27017').then(function(db) {
 ##Contributing
 
 1. Clone project and run `npm install`
-2. Add feature(s) and tests for it
-3. Submit pull request
+2. Add feature(s) 
+3. Add tests for it
+4. Submit pull request
 
 
