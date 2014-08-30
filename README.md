@@ -1,5 +1,4 @@
 #mongoFactory
-============
 
 > The purpose of this module is to manage mongo connection pools without creating a new connection pool in every file.
 >
