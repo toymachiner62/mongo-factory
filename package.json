@@ -4,7 +4,8 @@
   "description": "A very simple mongo connection pool manager",
   "main": "mongoFactory.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+		"posttest": "istanbul cover _mocha -- -R spec"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "chai": "^1.9.1",
     "chai-as-promised": "^4.1.1",
     "chai-spies": "^0.5.1",
+    "codeclimate-test-reporter": "0.0.3",
     "mocha": "^1.21.4"
   }
 }
