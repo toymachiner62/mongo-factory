@@ -1,10 +1,11 @@
 {
   "name": "mongo-factory",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A very simple mongo connection pool manager",
   "main": "mongoFactory.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+		"after_script": "- cat lcov.info | codeclimate"
   },
   "repository": {
     "type": "git",
