@@ -43,11 +43,26 @@ describe('mongoFactory', function() {
 		});
 		
 		describe('with a valid mongo string parameter', function() {
-			it('should return a fulfilled promise', function(done) {
-				var con = mongoFactory.getConnection('mongodb://localhost:27017');
-				expect(con).to.be.fulfilled;
-				expect(con).to.not.be.rejected;
-				done();
+			describe('needing to create the pool the first time', function() {
+				it('should return a fulfilled promise', function(done) {
+					var con = mongoFactory.getConnection('mongodb://localhost:27017').then(function(db) {
+						expect(con).to.be.fulfilled;
+						expect(con).to.not.be.rejected;
+						done();
+					});
+				});
+			});
+			
+			describe('after a pool is already instantiated', function() {
+				it('should return a fulfilled promise', function(done) {
+					var con1 = mongoFactory.getConnection('mongodb://localhost:27017').then(function() {
+						var con = mongoFactory.getConnection('mongodb://localhost:27017').then(function() {
+							expect(con).to.be.fulfilled;
+							expect(con).to.not.be.rejected;
+							done();
+						});
+					});
+				});
 			});
 		});
 	});

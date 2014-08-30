@@ -33,18 +33,30 @@ module.exports = function() {
       // Check if connections contains an object with connectionString equal to the connectionString passed in and set the var to it
       var pool = _.findWhere(connections, {connectionString: connectionString});
 
+			//console.log(connections);
+			
+			
+			console.log('pool = '+pool);
       // If no conneciton pool has been instantiated, instantiate it, else return a connection from the pool
       if(_.isUndefined(pool)) {
 
+				console.log('here');
+
+				console.log('connectString = '+connectionString);
+
         // Initialize connection once
         MongoClient.connect(connectionString, function(err, database) {
+					
+					console.log('in connect');
+					
           if (err) {
             def.reject(err);
           }
 
           // Add the connection to the array
           connections.push({connectionString: connectionString, db: database});
-
+					console.log('after');
+					//console.log(connections);
           def.resolve(database);
         });
 
