@@ -4,8 +4,7 @@
   "description": "A very simple mongo connection pool manager",
   "main": "mongoFactory.js",
   "scripts": {
-    "test": "mocha",
-		"posttest": "istanbul cover _mocha -- -R spec"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
