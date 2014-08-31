@@ -27,4 +27,6 @@ mongoFactory.getConnection('mongodb://localhost:27017').then(function(db) {
 3. Add tests for it
 4. Submit pull request
 
+Enjoy!
+
 
