@@ -1,5 +1,5 @@
 #mongo-factory
-[![Travis CI](https://travis-ci.org/toymachiner62/mongo-factory.svg?branch=master)](https://travis-ci.org/toymachiner62/mongo-factory.svg?branch=master)
+[![Build Status](https://travis-ci.org/toymachiner62/mongo-factory.svg?branch=v0.5)](https://travis-ci.org/toymachiner62/mongo-factory)
 [![Code Climate](https://codeclimate.com/github/toymachiner62/mongo-factory/badges/gpa.svg)](https://codeclimate.com/github/toymachiner62/mongo-factory)
 [![Test Coverage](https://codeclimate.com/github/toymachiner62/mongo-factory/badges/coverage.svg)](https://codeclimate.com/github/toymachiner62/mongo-factory)
 
@@ -17,6 +17,8 @@ var mongoFactory = require('mongoFactory');
 mongoFactory.getConnection('mongodb://localhost:27017').then(function(db) {
 	// user "db" as you normally would
 	db.collection.find()....
+}).fail(function(err) {
+	console.log(err);
 });
 ```
 
