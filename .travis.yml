@@ -7,4 +7,4 @@ addons:
     repo_token: 0bc1060eb2c8897c6d192e530449d2a6ab83338bbe3e94510531bf010c05b562 
 after_script:
   - cat ./coverage/lcov.info | codeclimate
-
+services: mongodb
