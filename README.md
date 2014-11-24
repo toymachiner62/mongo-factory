@@ -1,7 +1,6 @@
 #mongo-factory
-[![Build Status](https://travis-ci.org/toymachiner62/mongo-factory.svg?branch=v0.5)](https://travis-ci.org/toymachiner62/mongo-factory)
+[![Build Status](https://travis-ci.org/toymachiner62/mongo-factory.svg?branch=master)](https://travis-ci.org/toymachiner62/mongo-factory)
 [![Code Climate](https://codeclimate.com/github/toymachiner62/mongo-factory/badges/gpa.svg)](https://codeclimate.com/github/toymachiner62/mongo-factory)
-[![Test Coverage](https://codeclimate.com/github/toymachiner62/mongo-factory/badges/coverage.svg)](https://codeclimate.com/github/toymachiner62/mongo-factory)
 
 > The purpose of this module is to manage mongo connection pools without creating a new connection pool in every file.
 >
