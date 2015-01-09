@@ -11,7 +11,7 @@
 ##Usage
 
 ```js
-var mongoFactory = require('mongoFactory');
+var mongoFactory = require('mongo-factory');
 
 mongoFactory.getConnection('mongodb://localhost:27017').then(function(db) {
 	// user "db" as you normally would
