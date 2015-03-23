@@ -3,6 +3,12 @@ var expect = chai.expect;
 //var spies = require('chai-spies');
 
 describe('mongoFactory', function() {
+
+	var mongoFactory;
+		
+	beforeEach(function() {
+		mongoFactory = require('../');
+	});
 	
 	it('can be required without blowing up', function() {
 		var mongoFactory = require('../');
@@ -10,12 +16,6 @@ describe('mongoFactory', function() {
 	});
 	
 	describe('getConnection()', function() {
-		
-		var mongoFactory;
-		
-		beforeEach(function() {
-			mongoFactory = require('../');
-		})
 		
 		describe('with no arguments passed in', function() {
 			it('should fulfill the promise', function(done) {
@@ -64,6 +64,13 @@ describe('mongoFactory', function() {
 					});
 				});
 			});
+		});
+	});
+
+	describe('ObjectID', function() {
+		it('should return mongo\'s ObjectID method', function() {
+			var oid = mongoFactory.ObjectID;
+			expect(oid).to.be.a.function;
 		});
 	});
 });
