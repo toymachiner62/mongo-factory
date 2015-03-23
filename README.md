@@ -23,9 +23,11 @@ mongoFactory.getConnection('mongodb://localhost:27017').then(function(db) {
 
 ##API
 
-#### `getConnection(mongodbConnectionString)` - The only parameter being a connection string for a mongodb connection.
+#### `getConnection(mongodbConnectionString)` 
+- The only parameter being a connection string for a mongodb connection.
 
-#### `ObjectId` - Exposes the mongodb (ObjectID)[http://mongodb.github.io/node-mongodb-native/2.0/tutorials/objectid/] function.
+#### `ObjectId` 
+- Exposes the mongodb [ObjectID](http://mongodb.github.io/node-mongodb-native/2.0/tutorials/objectid/) function.
 
 ##Contributing
 
