@@ -1,6 +1,6 @@
 var chai = require('chai');
 var expect = chai.expect;
-//var spies = require('chai-spies');
+var mongo = require('mongodb');
 
 describe('mongoFactory', function() {
 
@@ -67,10 +67,33 @@ describe('mongoFactory', function() {
 		});
 	});
 
-	describe('ObjectID', function() {
+	describe.only('ObjectID', function() {
 		it('should return mongo\'s ObjectID method', function() {
 			var oid = mongoFactory.ObjectID;
 			expect(oid).to.be.a.function;
 		});
+
+		it('should allow you to create a new ObjectID', function() {
+			var oid = new mongoFactory.ObjectID;
+			expect(oid.toHexString().length).to.equal(24);
+		});
+
+		it('should allow you to compare ObjectID\'s', function() {
+			var oid1 = new mongoFactory.ObjectID;
+			var oid2 = new mongoFactory.ObjectID(oid1.id);
+			var oid3 = new mongoFactory.ObjectID;
+			expect(oid1.equals(oid2));
+			expect(!oid1.equals(oid3));
+		});
+
+		it('should allow you to create a new ObjectID with a specific timestamp', function() {
+			// Get a timestamp in seconds
+			var timestamp = Math.floor(new Date().getTime()/1000);
+			// Create a date with the timestamp
+			var timestampDate = new Date(timestamp*1000);
+			var oid = new mongoFactory.ObjectID(timestamp);
+			expect(oid.getTimestamp().toString()).to.equal(timestampDate.toString());
+		});
+
 	});
 });

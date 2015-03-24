@@ -63,7 +63,7 @@ module.exports = function() {
      * @returns  - Mongodb's ObjectID function
      */
     ObjectID: function() {
-      return mongo.ObjectID;
+      return mongo.ObjectID();
     }
   };
 }();
