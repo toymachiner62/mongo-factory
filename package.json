@@ -28,10 +28,10 @@
     "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "chai-as-promised": "^4.1.1",
-    "chai-spies": "^0.5.1",
-    "codeclimate-test-reporter": "0.0.3",
-    "mocha": "^1.21.4"
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
+    "chai-spies": "^0.7.1",
+    "codeclimate-test-reporter": "0.1.1",
+    "mocha": "^2.3.4"
   }
 }
