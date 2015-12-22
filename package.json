@@ -24,8 +24,10 @@
   "homepage": "https://github.com/toymachiner62/mongoFactory",
   "dependencies": {
     "q": "^1.0.1",
-    "mongodb": "^1.4.9",
     "underscore": "^1.7.0"
+  },
+  "peerDependencies": {
+    "mongodb": "*"
   },
   "devDependencies": {
     "chai": "^3.4.1",
