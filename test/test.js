@@ -67,7 +67,7 @@ describe('mongoFactory', function() {
 		});
 	});
 
-	describe.only('ObjectID', function() {
+	describe('ObjectID', function() {
 		it('should return mongo\'s ObjectID method', function() {
 			var oid = mongoFactory.ObjectID;
 			expect(oid).to.be.a.function;
