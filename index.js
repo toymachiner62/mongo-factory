@@ -3,13 +3,12 @@
  *
  * @type {exports}
  */
-var Q = require('q');
+var Promise = require('es6-promise').Promise;
 var mongo = require('mongodb');
 var MongoClient = mongo.MongoClient;
 var _ = require('underscore');
 
 var connections = [];
-var dbPromise = null;
 
 module.exports = function() {
 
@@ -22,39 +21,37 @@ module.exports = function() {
      * @returns {*}   - A promise object that will resolve to a mongo db object
      */
     getConnection: function getConnection(connectionString) {
+      return new Promise(function(resolve, reject) {
 
-      var def = Q.defer();
+        // If connectionString is null or undefined, return an error
+        if(_.isEmpty(connectionString)) {
+          return reject('getConnection must be called with a mongo connection string');
+        }
 
-      // If connectionString is null or undefined, return an error
-      if(_.isEmpty(connectionString)) {
-        def.reject('getConnection must contain a first parameter');
-        return dbPromise = def.promise;
-      }
+        // Check if connections contains an object with connectionString equal to the connectionString passed in and set the var to it
+        var pool = _.findWhere(connections, {connectionString: connectionString});
 
-      // Check if connections contains an object with connectionString equal to the connectionString passed in and set the var to it
-      var pool = _.findWhere(connections, {connectionString: connectionString});
+        // If no conneciton pool has been instantiated, instantiate it, else return a connection from the pool
+        if(_.isUndefined(pool)) {
 
-      // If no conneciton pool has been instantiated, instantiate it, else return a connection from the pool
-      if(_.isUndefined(pool)) {
+          // Initialize connection once
+          MongoClient.connect(connectionString, function(err, database) {
 
-        // Initialize connection once
-        MongoClient.connect(connectionString, function(err, database) {
+            if (err) {
+              reject(err);
+            }
 
-          if (err) {
-            def.reject(err);
-          }
+            // Add the connection to the array
+            connections.push({connectionString: connectionString, db: database});
 
-          // Add the connection to the array
-          connections.push({connectionString: connectionString, db: database});
+            resolve(database);
+          });
 
-          def.resolve(database);
-        });
+        } else {  // Else we have not instantiated the pool yet and we need to
+          resolve(pool.db);
+        }
 
-      } else {  // Else we have not instantiated the pool yet and we need to
-        def.resolve(pool.db);
-      }
-
-      return dbPromise = def.promise;
+      });
     },
 
     /**

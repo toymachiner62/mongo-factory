@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/toymachiner62/mongoFactory",
   "dependencies": {
-    "q": "^1.0.1",
+    "es6-promise": "^3.0.2",
     "underscore": "^1.7.0"
   },
   "peerDependencies": {
