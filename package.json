@@ -23,15 +23,17 @@
   },
   "homepage": "https://github.com/toymachiner62/mongoFactory",
   "dependencies": {
-    "q": "^1.0.1",
-    "mongodb": "^1.4.9",
-    "underscore": "^1.7.0"
+    "es6-promise": "^3.0.2",
+    "underscore": "^1.8.3"
+  },
+  "peerDependencies": {
+    "mongodb": "*"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "chai-as-promised": "^4.1.1",
-    "chai-spies": "^0.5.1",
-    "codeclimate-test-reporter": "0.0.3",
-    "mocha": "^1.21.4"
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
+    "chai-spies": "^0.7.1",
+    "codeclimate-test-reporter": "0.1.1",
+    "mocha": "^2.3.4"
   }
 }
