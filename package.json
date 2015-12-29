@@ -34,6 +34,7 @@
     "chai-as-promised": "^5.2.0",
     "chai-spies": "^0.7.1",
     "codeclimate-test-reporter": "0.1.1",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "mongodb": "*"
   }
 }
