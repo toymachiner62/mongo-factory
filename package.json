@@ -1,6 +1,6 @@
 {
   "name": "mongo-factory",
-  "version": "0.6.1",
+  "version": "1.0.0",
   "description": "A very simple mongo connection pool manager",
   "main": "mongoFactory.js",
   "scripts": {
